@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import styled from 'styled-components';
+import Editor from './Editor';
+
 
 class Blogs extends React.Component {
   RawHTML({children, className = ""}){
@@ -9,9 +11,7 @@ class Blogs extends React.Component {
   
   render() {
     return (
-      <div>
-        {this.RawHTML({children: "<h2>I am \nblogs\n</h2>"})}
-      </div>
+      "a"
     );
   }
 }
