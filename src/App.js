@@ -11,11 +11,11 @@ class App extends React.Component {
   componentDidMount() {
     setTimeout(() => {
       this.setState({isLoading: false});
-    }, 10);
+    }, 2000);
   }
   render() {
     return(
-        <Home/>
+        this.state.isLoading? <Loading/>:<Home/>
     );
   }
 }
