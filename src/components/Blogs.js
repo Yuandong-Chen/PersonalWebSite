@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import styled from 'styled-components';
+import { Flipper, Flipped } from 'react-flip-toolkit';
 import Search from './Search'
 import articles from '../data/articles'
 import rating from './searchEngine/Rating'
@@ -18,9 +19,9 @@ const CardFrame = styled.div`
   margin-top: 5px;
 `;
 
-const BlogCard = ({title, extract, date, _rating}) => {
+const BlogCard = ({title, extract, date, _rating, ...rest}) => {
   return (
-    <CardFrame>
+    <CardFrame {...rest}>
       <Title>{title}</Title>
       <span>{date}</span>
       <Extract>{extract}</Extract>
@@ -36,21 +37,21 @@ const ExpandedBlog = ({title, data, date}) => {
 class Blogs extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { searching: "" };
+    this.state = { searching: "", articles: articles.slice().sort((a, b) => {
+      if(b.date > a.date) return 1;
+      if(a.date == b.date) {
+        if(a.title < b.date) {
+          return -1
+        }
+        return 1;
+      }
+      return -1;
+    })};
   }
 
   setSearching = (s) => {
     //we need to modify the rating of our articles
-    if (s.target.value == "") {
-      let i = 0;
-      for (; i < articles.length; i++) {
-        window.articles[i]._rating = 0
-      }
-    }
-    else {
-      rating(s.target.value);
-    }
-    this.setState({ searching: s.target.value });
+    this.setState({ searching: s.target.value, articles: rating(s.target.value, this.state.articles.slice()) });
   }
 
   RawHTML({children, className = ""}){
@@ -60,25 +61,19 @@ class Blogs extends React.Component {
   render() {
     return (
       <div>
+      <Flipper flipKey={this.state.searching} spring="gentle">
       <Search onChange={this.setSearching} />
       {
-        window.articles.sort((a, b) => {
-          if(a._rating != b._rating) {
-            return b._rating - a._rating;
-          }
-          else {
-            if(a.date < b.date) {
-              return 1;
-            }
-            return -1;
-          }
-        }).map((obj) =>
+        this.state.articles.map((obj) =>
+        <Flipped key={obj.title} flipId={obj.title}>
           <BlogCard
             key={obj.title}
             title={obj.title}
             extract={obj.extract}
-            date={obj.date} _rating={obj._rating}/> )
+            date={obj.date} _rating={obj._rating}/>
+        </Flipped>)
       }
+      </Flipper>
       </div>
     );
   }
