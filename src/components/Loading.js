@@ -22,17 +22,15 @@ const Header = styled.h1`
   color: black;
 `;
 
-class Loading extends React.Component {
-  render() {
-    return(
-      <div>
-        <Header>Happy Coding Everyday</Header>
-        <LoadingContainer>
-          <Spinner color="black" />
-        </LoadingContainer>
-      </div>
-    );
-  }
-}
+const Loading = () => {
+  return(
+    <div>
+      <Header>Happy Coding Everyday</Header>
+      <LoadingContainer>
+        <Spinner color="black" />
+      </LoadingContainer>
+    </div>
+  );
+};
 
 export default Loading;

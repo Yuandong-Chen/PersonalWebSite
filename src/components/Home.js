@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import Tabs from './Tabs'
 
 let tabConfigs = [
@@ -10,14 +10,26 @@ let tabConfigs = [
   "About me"
 ];
 
-class Home extends React.Component {
-  render() {
-    return (
-      <div>
-        <Tabs tabs={tabConfigs}/>
-      </div>
-    );
+const fadeIn = keyframes`
+  0% {
+    opacity: 0;
   }
-}
+  100% {
+    opacity: 1;
+  }
+`
+
+const AnimeWrapper = styled.div`
+  animation: 1s ${fadeIn} ease-out;
+  animation-fill-mode: forwards;
+`;
+
+const Home = ({tabsConfigs, articles}) => {
+  return (
+    <AnimeWrapper>
+      <Tabs tabs={tabConfigs} articles={articles}/>
+    </AnimeWrapper>
+  );
+};
 
 export default Home;

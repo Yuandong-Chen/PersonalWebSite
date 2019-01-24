@@ -24,6 +24,7 @@ const Menu = styled.div`
     font-weight: bold;
     cursor: pointer;
   }
+  user-drag: none;
 `.withComponent(Link);
 
 const MenuContainer = styled.div`
@@ -40,28 +41,26 @@ const Panel = styled.div`
   border: solid 1px red;
 `;
 
-class Tabs extends React.Component {
-  render() {
-    return (
-      <div>
-        <Router>
-            <div>
-              <MenuContainer>
-                {this.props.tabs.map((name) => <Menu to={'/' + name}>{name}</Menu>)}
-              </MenuContainer>
-              <Panel>
-                <Switch>
-                  <Route path='/Blogs' component={Blogs} />
-                  <Route path='/Projects' component={Projects} />
-                  <Route path='/Portfolio' component={Portfolio} />
-                  <Route path='/About me' component={AboutMe} />
-                </Switch>
-              </Panel>
-            </div>
-        </Router>
-      </div>
-    );
-  }
+const Tabs = ({tabs}) => {
+  return (
+    <div>
+      <Router>
+          <div>
+            <MenuContainer>
+              {tabs.map((name) => <Menu key={name} to={'/' + name}>{name}</Menu>)}
+            </MenuContainer>
+            <Panel>
+              <Switch>
+                <Route path='/Blogs' component={Blogs} />
+                <Route path='/Projects' component={Projects} />
+                <Route path='/Portfolio' component={Portfolio} />
+                <Route path='/About me' component={AboutMe} />
+              </Switch>
+            </Panel>
+          </div>
+      </Router>
+    </div>
+  );
 }
 
 export default Tabs;
