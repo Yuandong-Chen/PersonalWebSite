@@ -6,7 +6,7 @@ class AboutMe extends React.Component {
   render() {
     return (
       <div>
-        "I am AboutMe"
+        "I am AboutMe TODO"
       </div>
     );
   }

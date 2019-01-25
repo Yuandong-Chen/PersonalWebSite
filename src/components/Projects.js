@@ -6,7 +6,7 @@ class Projects extends React.Component {
   render() {
     return (
       <div>
-        "I am Projects"
+        "I am Projects TODO"
       </div>
     );
   }

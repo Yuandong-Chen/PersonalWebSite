@@ -32,7 +32,7 @@ const Data = styled.div`
 `;
 
 const CardFrame = styled.div`
-  flex-basis: 15%;
+  flex-basis: 20%;
   flex-grow: 0;
   margin-top: 20px;
   margin-left: 20px;
