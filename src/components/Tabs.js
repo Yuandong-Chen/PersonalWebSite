@@ -9,19 +9,20 @@ import {
 import styled from 'styled-components';
 import Blogs from './Blogs';
 import Projects from './Projects';
-import Portfolio from './Portfolio';
+import Edit from './Edit';
 import AboutMe from './AboutMe';
 
 const Menu = styled.div`
   display: inline-block;
-  font-family: cursive;
+  font-family: 'Monoton', cursive;
   font-size: 24px;
+  font-weight: bold;
   margin-left: 10px;
-  color: gray;
+  color: black;
   text-decoration: none;
   &:hover {
-    color: black;
-    font-weight: bold;
+    color: gray;
+    font-weight: light;
     cursor: pointer;
   }
   user-drag: none;
@@ -38,7 +39,7 @@ const Panel = styled.div`
   display: block;
   width: 100%;
   margin-top: 50px;
-  border: solid 1px red;
+  border-top: solid 0.5px black;
 `;
 
 const Tabs = ({tabs}) => {
@@ -53,8 +54,8 @@ const Tabs = ({tabs}) => {
               <Switch>
                 <Route path='/Blogs' component={Blogs} />
                 <Route path='/Projects' component={Projects} />
-                <Route path='/Portfolio' component={Portfolio} />
                 <Route path='/About me' component={AboutMe} />
+                <Route path='/Edit' component={Edit} />
               </Switch>
             </Panel>
           </div>

@@ -1,15 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import styled from 'styled-components';
+import Editor from './Editor'
 
-class Portfolio extends React.Component {
+class Edit extends React.Component {
   render() {
     return (
-      <div>
-        "I am Portfolio"
-      </div>
+      <Editor />
     );
   }
 }
 
-export default Portfolio;
+export default Edit;

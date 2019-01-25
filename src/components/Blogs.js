@@ -6,17 +6,40 @@ import Search from './Search'
 import articles from '../data/articles'
 import rating from './searchEngine/Rating'
 
-const Title = styled.h2`
-
+const Title = styled.div`
+  text-align: center;
+  font-size: 30px;
+  font-family: "Times New Roman";
 `;
 
-const Extract = styled.span`
+const Extract = styled.div`
+  padding-left: 50px;
+  padding-right: 50px;
+  display: inline-block;
+  font-family: "Times New Roman";
+`;
 
+const DateArticle = styled.div`
+  padding-left:50px;
+  display: flow;
+  font-family: "Times New Roman";
+`;
+
+const Data = styled.div`
+  padding-left:50px;
+  padding-right:50px;
+  font-family: "Times New Roman";
 `;
 
 const CardFrame = styled.div`
-  flex: 1 1 50px;
-  border: solid 1px blue;
+  flex-basis: 15%;
+  flex-grow: 0;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  background: white;
+  border: solid 0.5px black;
+  border-radius: 4px;
 `;
 
 const Wrapper = styled.div`
@@ -24,7 +47,6 @@ const Wrapper = styled.div`
   flex-direction: ${props => props.toggled? "row": "column"};
   flex-wrap: wrap;
   justify-content: space-between;
-  border: solid 1px blue;
 `;
 
 const BlogCard = ({title, extract, date, _rating, ...rest}) => {
@@ -33,9 +55,8 @@ const BlogCard = ({title, extract, date, _rating, ...rest}) => {
     <Flipped inverseFlipId={title}>
       <Title title={title}>{title}</Title>
     </Flipped>
-      <span title={title}>{date}</span>
+      <DateArticle title={title}>{date}</DateArticle>
       <Extract title={title}>{extract}</Extract>
-      {_rating}
     </CardFrame>
   );
 };
@@ -43,8 +64,9 @@ const BlogCard = ({title, extract, date, _rating, ...rest}) => {
 const ExpandedBlog = ({title, data, date, onClick}) => {
   return <Flipped flipId={title}>
   <div onClick={onClick}>
-  <Title>{title} {date}</Title>
-  {data}
+  <Title>{title}</Title>
+  <DateArticle>{date}</DateArticle>
+  <Data>{data}</Data>
   </div>
   </Flipped>
 };

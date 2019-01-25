@@ -6,7 +6,6 @@ import {Card} from 'styled-icons/boxicons-regular';
 const Wrapper = styled.div`
   display: flex;
   flex-direction: row-reverse;
-  border: solid 1px red;
 `;
 
 const Toggle = styled.button`
@@ -14,6 +13,7 @@ const Toggle = styled.button`
   text-align: right;
   background: none;
   max-width: 60px;
+  border: none;
 `;
 
 const Input = styled.input`
@@ -22,9 +22,9 @@ const Input = styled.input`
   padding: 0.5em;
   margin: 0.5em;
   margin-right: 20px;
-  color: ${props => props.inputColor || "palevioletred"};
-  background: papayawhip;
-  border: none;
+  color: black
+  background: white;
+  border: solid 0.5px black;
   border-radius: 3px;
   max-width: 100px;
 `;

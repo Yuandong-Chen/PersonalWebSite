@@ -1,3 +1,11 @@
-body {
-  
+html > body {
+  background: white;
+  height: 100%;
 }
+
+html, body{height:100%;}
+#outer{
+  min-height:100%;
+}
+* html #outer{height:100%;} /* for IE 6, if you care */
+body, p { margin:0; padding:0}

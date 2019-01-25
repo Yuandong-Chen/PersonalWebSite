@@ -6,8 +6,8 @@ import Tabs from './Tabs'
 let tabConfigs = [
   "Blogs",
   "Projects",
-  "Portfolio",
-  "About me"
+  "About me",
+  "Edit"
 ];
 
 const fadeIn = keyframes`
@@ -22,6 +22,7 @@ const fadeIn = keyframes`
 const AnimeWrapper = styled.div`
   animation: 1s ${fadeIn} ease-out;
   animation-fill-mode: forwards;
+  background: none;
 `;
 
 const Home = ({tabsConfigs, articles}) => {

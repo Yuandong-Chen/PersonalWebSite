@@ -8,9 +8,9 @@ class App extends React.Component {
     super(props);
     this.state = { isLoading: true };
   }
-  
+
   componentDidMount() {
-    setTimeout(() => { this.setState({isLoading: false}); }, 500);
+    setTimeout(() => { this.setState({isLoading: false}); }, 1000);
   }
 
   render() {
