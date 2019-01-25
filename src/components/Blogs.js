@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 import { Flipper, Flipped } from 'react-flip-toolkit';
 import Search from './Search'
 import articles from '../data/articles'
@@ -8,8 +8,9 @@ import rating from './searchEngine/Rating'
 
 const Title = styled.div`
   text-align: center;
-  font-size: 30px;
+  font-size: 20px;
   font-family: "Times New Roman";
+  padding-top:10px;
 `;
 
 const Extract = styled.div`
@@ -29,29 +30,33 @@ const Data = styled.div`
   padding-left:50px;
   padding-right:50px;
   font-family: "Times New Roman";
+  padding-bottom: 50px;
 `;
 
 const CardFrame = styled.div`
   flex-basis: 20%;
   flex-grow: 0;
   margin-top: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
   background: white;
-  border: solid 0.5px black;
-  border-radius: 4px;
+  border-top: solid 0.5px black;
+  border-bottom: solid 0.5px black;
+  ${props => props.toggled && css`
+    border: solid 0.5px black;
+    border-radius: 4px;
+    `};
 `;
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: ${props => props.toggled? "row": "column"};
+  padding-left:${props => props.toggled? "50px": "none"};
+  padding-right:${props => props.toggled? "50px": "none"};
   flex-wrap: wrap;
-  justify-content: space-between;
 `;
 
-const BlogCard = ({title, extract, date, _rating, ...rest}) => {
+const BlogCard = ({toggled, title, extract, date, _rating, ...rest}) => {
   return (
-    <CardFrame title={title} {...rest}>
+    <CardFrame toggled={toggled} title={title} {...rest}>
     <Flipped inverseFlipId={title}>
       <Title title={title}>{title}</Title>
     </Flipped>
@@ -122,6 +127,7 @@ class Blogs extends React.Component {
         this.state.articles.map((obj) =>
         <Flipped key={obj.title} flipId={obj.title} stagger={true}>
           <BlogCard
+            toggled={this.state.toggled}
             key={obj.title}
             title={obj.title}
             extract={obj.extract}

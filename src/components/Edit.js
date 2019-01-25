@@ -1,7 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import styled from 'styled-components';
-import Editor from './Editor'
+import Editor from './Editor';
+
+const Wrapper = styled.div`
+  border-bottom: solid 1px black;
+`;
 
 class Edit extends React.Component {
   constructor(props) {
@@ -16,7 +20,7 @@ class Edit extends React.Component {
   render() {
     return (
       <div>
-      {this.state.html}
+      <Wrapper>{this.state.html}</Wrapper>
       <Editor onSave={this.saveChange}/>
       </div>
     );
