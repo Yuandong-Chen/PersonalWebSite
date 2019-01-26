@@ -6,8 +6,7 @@ import Tabs from './Tabs'
 let tabConfigs = [
   "Blogs",
   "Projects",
-  "About me",
-  "Edit"
+  "About me"
 ];
 
 const fadeIn = keyframes`
