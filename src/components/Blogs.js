@@ -43,6 +43,7 @@ const CardFrame = styled.div`
   ${props => props.toggled && css`
     border: solid 0.5px black;
     border-radius: 4px;
+    margin-right: 10px;
     `};
 `;
 
