@@ -18,10 +18,10 @@ const Menu = styled.div`
   font-size: 24px;
   font-weight: bold;
   margin-left: 10px;
-  color: black;
+  color: #444444;
   text-decoration: none;
   &:hover {
-    color: gray;
+    color: lightgray;
     font-weight: light;
     cursor: pointer;
   }

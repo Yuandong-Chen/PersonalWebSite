@@ -10,6 +10,8 @@ const Title = styled.div`
   text-align: center;
   font-size: 20px;
   font-family: "Times New Roman";
+  padding-left: 50px;
+  padding-right: 50px;
   padding-top:10px;
 `;
 
@@ -24,6 +26,7 @@ const DateArticle = styled.div`
   padding-left:50px;
   display: flow;
   font-family: "Times New Roman";
+  color: rgb(35,208,196);
 `;
 
 const Data = styled.div`
@@ -34,16 +37,19 @@ const Data = styled.div`
 `;
 
 const CardFrame = styled.div`
-  flex-basis: 20%;
-  flex-grow: 0;
-  margin-top: 20px;
+  flex-grow: 1;
+  min-height: 100%;
   background: white;
-  border-top: solid 0.5px black;
-  border-bottom: solid 0.5px black;
+  border: solid 0.5px gray;
+  margin-left: 10%;
+  margin-right: 10%;
   ${props => props.toggled && css`
-    border: solid 0.5px black;
+    flex-basis: 20%;
+    flex-grow: 0;
+    margin-top: 20px;
     border-radius: 4px;
     margin-right: 10px;
+    margin-left: 0px;
     `};
 `;
 

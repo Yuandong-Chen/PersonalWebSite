@@ -6,6 +6,10 @@ import {DotsHorizontal as Card} from 'styled-icons/boxicons-regular/DotsHorizont
 const Wrapper = styled.div`
   display: flex;
   flex-direction: row-reverse;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 15px;
+  margin-top: 15px;
 `;
 
 const Toggle = styled.button`

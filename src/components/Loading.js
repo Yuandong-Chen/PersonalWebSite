@@ -25,7 +25,7 @@ const Header = styled.h1`
 const Loading = () => {
   return(
     <div>
-      <Header>Happy Coding Everyday</Header>
+      <Header>Simple but not Simpler</Header>
       <LoadingContainer>
         <Spinner color="black" />
       </LoadingContainer>
