@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import styled from 'styled-components';
-import {Card} from 'styled-icons/boxicons-regular';
+import {DotsHorizontal as Card} from 'styled-icons/boxicons-regular/DotsHorizontal';
 
 const Wrapper = styled.div`
   display: flex;
