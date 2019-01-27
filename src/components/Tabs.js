@@ -29,7 +29,8 @@ const Menu = styled.div`
 `.withComponent(Link);
 
 const MenuContainer = styled.div`
-  margin-top: 25px;
+  padding-top: 50px;
+  padding-bottom: 50px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -38,7 +39,7 @@ const MenuContainer = styled.div`
 const Panel = styled.div`
   display: block;
   width: 100%;
-  margin-top: 50px;
+  height: 100%;
   border-top: solid 0.5px black;
 `;
 

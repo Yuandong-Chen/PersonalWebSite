@@ -53,7 +53,7 @@ const Wrapper = styled.div`
   padding-left:${props => props.toggled? "50px": "none"};
   padding-right:${props => props.toggled? "50px": "none"};
   flex-wrap: wrap;
-  margin-bottom: 40px;
+  padding-bottom: 150px;
 `;
 
 const BlogCard = ({toggled, title, extract, date, _rating, ...rest}) => {
