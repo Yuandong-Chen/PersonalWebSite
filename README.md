@@ -1,1 +1,2 @@
-Personal Website: [Demo](./build/index.html).
+Personal Website Developing Version with React:
+### npm start
