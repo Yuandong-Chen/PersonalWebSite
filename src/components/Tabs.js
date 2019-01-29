@@ -57,6 +57,7 @@ const Tabs = ({tabs}) => {
                 <Route path='/Projects' component={Projects} />
                 <Route path='/About me' component={AboutMe} />
                 <Route path='/Edit' component={Edit} />
+                <Route path='/' component={Projects} />
               </Switch>
             </Panel>
           </div>

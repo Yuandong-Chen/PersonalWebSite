@@ -120,7 +120,7 @@ class Blogs extends React.Component {
   }
 
   RawHTML(children){
-    return <div className={'markdown-body'} dangerouslySetInnerHTML={{ __html: children}} />;
+    return <div className='markdown-body' dangerouslySetInnerHTML={{ __html: children}} />;
   }
 
   render() {
