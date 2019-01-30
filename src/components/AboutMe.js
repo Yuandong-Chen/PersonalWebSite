@@ -25,7 +25,7 @@ class AboutMe extends React.Component {
   render() {
     return (
       <Wrapper>
-        <Title><Demo href={resume}>Download Resume (Open for hiring)</Demo></Title>
+        <Title><Demo target="_blank" href={resume}>Download Resume (Open for hiring)</Demo></Title>
         <Project>
           <ProjectCard>
             <ProjectName></ProjectName>
