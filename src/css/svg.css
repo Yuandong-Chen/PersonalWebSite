@@ -1,0 +1,9 @@
+#svg-container {
+  display: flex;
+  align-items: center;
+}
+
+#svg {
+  flex: 1 0;
+  height: 100px;
+}

@@ -29,7 +29,6 @@ const Menu = styled.div`
 `.withComponent(Link);
 
 const MenuContainer = styled.div`
-  padding-top: 50px;
   padding-bottom: 50px;
   display: flex;
   flex-direction: row;
@@ -57,7 +56,7 @@ const Tabs = ({tabs}) => {
                 <Route path='/Projects' component={Projects} />
                 <Route path='/About me' component={AboutMe} />
                 <Route path='/Edit' component={Edit} />
-                <Route path='/' component={Projects} />
+                <Route path='/' component={AboutMe} />
               </Switch>
             </Panel>
           </div>

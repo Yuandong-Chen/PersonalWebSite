@@ -50,6 +50,7 @@ const CardFrame = styled.div`
     border-radius: 4px;
     margin-right: 10px;
     margin-left: 0px;
+    background: white;
     `};
 `;
 
